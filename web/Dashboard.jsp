@@ -92,7 +92,7 @@ while (rs.next()) {
                         <p>User Manager</p>
                     </a>
                 </li>
-                <%--<li>
+                <li>
                     <a href="typography.html">
                         <i class="pe-7s-news-paper"></i>
                         <p>Tasks</p>
@@ -104,7 +104,7 @@ while (rs.next()) {
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>
-</li>--%>
+                </li>
 				<%--<li class="active-pro">
                     <a href="upgrade.html">
                         <i class="pe-7s-rocket"></i>

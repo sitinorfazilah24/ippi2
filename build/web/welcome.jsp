@@ -14,6 +14,6 @@
     <body>
         <h1>You are successfully registered!</h1>
         
-        <a href="index.jsp">Proceed to login page?</a>
+        <a href="navigation_page.jsp">Proceed to login page?</a>
     </body>
 </html>

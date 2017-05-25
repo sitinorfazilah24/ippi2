@@ -26,11 +26,8 @@
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
-h1{font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    color: #ffffff;
-    padding-bottom: 33px;
-    
-}
+h1{font-family:Georgia, serif;
+    color: dimgrey;}
 .login-wrap{
     width:100%;
     margin:auto;
@@ -38,7 +35,7 @@ h1{font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     min-height:670px;
     position:relative;
     background:url(http://1.bp.blogspot.com/-DBITwYFv7OI/TocJMwSUrOI/AAAAAAAAA68/iK-_rtdCGI4/w1200-h630-p-k-no-nu/website%2Bsmtkl%2Byellow.jpg) no-repeat center;
-    
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
     width:100%;
@@ -173,11 +170,10 @@ h1{font-family: Copperplate, "Copperplate Gothic Light", fantasy;
         </style>
     </head>
     <body>
-        
+        <h1><center>Sistem Skim Pinjaman Buku Teks (SPBT) SMTKL</center></h1>
        <div class="login-wrap">
            
     <div class="login-html">
-        <h1><center>SISTEM SKIM PINJAMAN BUKU TEKS SMTKL</center></h1>
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Log In</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Register</label>
         <div class="login-form">

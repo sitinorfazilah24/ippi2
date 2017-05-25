@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FunWithProgramming/SPBTSystem/web/welcome.jsp</file>
-            <file>file:/D:/FunWithProgramming/SPBTSystem/web/authentication.jsp</file>
-            <file>file:/D:/FunWithProgramming/SPBTSystem/web/success.jsp</file>
-            <file>file:/D:/FunWithProgramming/SPBTSystem/web/index.jsp</file>
-            <file>file:/D:/FunWithProgramming/SPBTSystem/web/registration.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/nbproject/genfiles.properties</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/navigation_page.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/authentication.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/borrow.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/books.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/header.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/navbar.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/footer.jsp</file>
+            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/record.jsp</file>
         </group>
     </open-files>
 </project-private>
