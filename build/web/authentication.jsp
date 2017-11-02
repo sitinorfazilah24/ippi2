@@ -33,7 +33,7 @@
            //try{
                
                Class.forName("org.postgresql.Driver");
-               Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-1","postgres","P@ssw0rd");
+               Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
                PreparedStatement ps = con.prepareStatement("select * from userobject where username=? and password=? and status='Active' ;");
                 ps.setString(1, id);
                 ps.setString(2, fin);

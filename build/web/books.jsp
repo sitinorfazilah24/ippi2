@@ -21,12 +21,12 @@
   <body>
       <%@ include file="navbar.jsp"%>
 <%
-String id = request.getParameter("bookID");
+String id = request.getParameter("registeredid");
 String driverName = "org.postgresql.Driver";
 String connectionUrl = "jdbc:postgresql://localhost:5432/";
-String dbName = "spbt-1";
+String dbName = "spbt-I";
 String userId = "postgres";
-String password = "P@ssw0rd";
+String password = "12345";
 
 try {
 Class.forName(driverName);
@@ -56,18 +56,18 @@ ResultSet resultSet = null;
 try{ 
 connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
 statement=connection.createStatement();
-String sql ="SELECT * FROM book";
+String sql ="SELECT * FROM books";
 
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 <tr>
 
-<td><%=resultSet.getString("bookID") %></td>
+<td><%=resultSet.getString("bookid") %></td>
 <td><%=resultSet.getString("forms") %></td>
 <td><%=resultSet.getString("publisher") %></td>
 <td><%=resultSet.getString("price") %></td>
-<td><%=resultSet.getString("userID") %></td>
+<td><%=resultSet.getString("userid") %></td>
 <td><%=resultSet.getString("status") %></td>
 
 </tr>
