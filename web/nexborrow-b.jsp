@@ -7,15 +7,10 @@
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Error</title>
-    </head>
-    <body>
+
         <%
     String studid = "dumstudid";
-//    String form1=request.getParameter("BM");;
+//    String form1=request.getParameter("BM");
 //    String bookid = request.getParameter("BI");
     Class.forName("org.postgresql.Driver");
     Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
@@ -46,5 +41,3 @@
             }
         response.sendRedirect("nexborrow.jsp");
 %>
-    </body>
-</html>

@@ -8,37 +8,39 @@
 <!DOCTYPE html>
 
         <%
-        String id = request.getParameter("registeredid");
-        String driverName = "org.postgresql.Driver";
+        String form2 = (String)session.getAttribute("form1");
+//        String id = request.getParameter("registeredid");
+        String driverName1 = "org.postgresql.Driver";
         String connectionUrl = "jdbc:postgresql://localhost:5432/";
         String dbName = "spbt-I";
         String userId = "postgres";
         String password = "12345";
 
         try {
-        Class.forName(driverName);
+        Class.forName(driverName1);
         } catch (ClassNotFoundException e) {
         e.printStackTrace();
         }
 
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
+        Connection connection1 = null;
+        Statement statement1 = null;
+        ResultSet resultSet1 = null;
         %>
         
         <%
         try{ 
-        connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
-        statement=connection.createStatement();
+        connection1 = DriverManager.getConnection(connectionUrl+dbName, userId, password);
+        statement1=connection1.createStatement();
         String sql ="SELECT * FROM public2.booksborrow";
 
-        resultSet = statement.executeQuery(sql);
-        while(resultSet.next()){
+        resultSet1 = statement1.executeQuery(sql);
+        while(resultSet1.next()){
         %>
         <tr>
-
-        <td><%=resultSet.getString("studid") %></td>
-        <td><%=resultSet.getString("bookid") %></td>
+            
+        <td><%=resultSet1.getString("studid") %></td>
+        <td><%=form2 %></td>
+        <td><%=resultSet1.getString("title") %></td>
 
         </tr>
         <% 
