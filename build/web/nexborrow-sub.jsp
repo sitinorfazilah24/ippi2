@@ -9,7 +9,6 @@
 
         <%
         String form2 = (String)session.getAttribute("form1");
-//        String id = request.getParameter("registeredid");
         String driverName1 = "org.postgresql.Driver";
         String connectionUrl = "jdbc:postgresql://localhost:5432/";
         String dbName = "spbt-I";

@@ -13,7 +13,9 @@
         String form1="4";
         String studid = "dumstudid";
         session.setAttribute("form1",form1);
-        response.setHeader("location","http://localhost:8080/SPBTSystem/test2.jsp");
+        session.setAttribute("studid",studid);
+        response.setHeader("location","http://localhost:8080/SPBTSystem/nexborrow-sub.jsp");
+        response.setHeader("location","http://localhost:8080/SPBTSystem/nexborrow-b.jsp");
         String driverName = "org.postgresql.Driver";
         Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
         

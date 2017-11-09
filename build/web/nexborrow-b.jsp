@@ -9,9 +9,7 @@
 <!DOCTYPE html>
 
         <%
-    String studid = "dumstudid";
-//    String form1=request.getParameter("BM");
-//    String bookid = request.getParameter("BI");
+    String studid = (String)session.getAttribute("studid");
     Class.forName("org.postgresql.Driver");
     Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
     
@@ -20,11 +18,7 @@
     
     
     String queryText = null;
-    
-    
-    //ResultSet rs;
-    
-            
+
             if(fruits != null){
             for(int i=0; i<fruits.length; i++){
                 queryText = "insert into public2.booksborrow values ('" + studid + "','" + fruits[i] + "')";

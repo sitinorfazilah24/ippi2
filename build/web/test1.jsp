@@ -35,6 +35,8 @@
 
         Statement statement = null;
         ResultSet resultSet = null;
+        ResultSet resultSet2 = null;
+        ResultSet resultSet3 = null;
         %>
         
         <%
@@ -42,64 +44,15 @@
         try{ 
         
         statement=connection.createStatement();
-        String sql ="SELECT * FROM public2.booksborrow WHERE studid = '" + studid + "'";
-
-        resultSet = statement.executeQuery(sql);
-        
-        while(resultSet.next()){
-           z++;
-        }
-        } catch (Exception e) {
-        e.printStackTrace();
-        }
-         
-        %>
-        
-        <%
-        String[] title=new String[z];
-        try{ 
-        
-        statement=connection.createStatement();
-        String sql ="SELECT * FROM public2.booksborrow WHERE studid = '" + studid + "'";
-
-        resultSet = statement.executeQuery(sql);
-        int i=0;
-        
-        
-        while(resultSet.next()){
-           title[i]=resultSet.getString("title");
-           i++;
-        }
-       
-//        out.print(title.length);
-//        for(int x=0;x<title.length;x++){
-//            out.print(title[x]);
-//        }
-
-        } catch (Exception e) {
-        e.printStackTrace();
-        }
-         
-        %>
-        
-        <%
-        try{ 
-        
-        statement=connection.createStatement();
         String sql ="SELECT * FROM public.books WHERE forms = '" + form1 + "'";
 
         resultSet = statement.executeQuery(sql);
-        int i=0;
+        String sql2 ="SELECT title FROM public2.booksborrow WHERE studid = '" + studid + "' AND title='" + resultSet.getString("title") + "'";
+        out.print("qwe");
+        resultSet2 = statement.executeQuery(sql2);
         
         while(resultSet.next()){
-            boolean a=true;
-            for(int x=0;x<title.length;x++){
-                if(title[x].equalsIgnoreCase(resultSet.getString("title"))){
-                    a=false;
-                    break;
-                }
-            }
-            if(a==true){
+            if(resultSet2==null){
                 %>
                     <div class="form-check form-check-inline">
                     <label class="form-check-label">
@@ -109,13 +62,19 @@
                 <%
             }
         }
-
+        
+        
+           
+        
         } catch (Exception e) {
         e.printStackTrace();
         }
-        
+         
         %>
-
+        
+       
+                
+     
         </div>
    
 
