@@ -21,7 +21,7 @@
 
             if(fruits != null){
             for(int i=0; i<fruits.length; i++){
-                queryText = "insert into public2.booksborrow values ('" + studid + "','" + fruits[i] + "')";
+                queryText = "insert into public2.booksborrow values ('" + studid + "','" + fruits[i] + "',current_date)";
                 
                 try {
 
@@ -30,8 +30,21 @@
                        rst.close();
                        stat.close();
                        con.close();
-                   } catch (Exception e) { }
+                   } catch (Exception e) {e.printStackTrace(); }
                 }
+            
+            
+//                queryText = "insert into public2.records values ('" + studid + "','" + fruits.toString() + "',current_date)";
+//                try {
+//
+//                       Statement stat = con.createStatement();
+//                       ResultSet rst = stat.executeQuery(queryText);
+//                       rst.close();
+//                       stat.close();
+//                       con.close();
+//                   } catch (Exception e) { e.printStackTrace();}
+                
+                
             }
         response.sendRedirect("nexborrow.jsp");
 %>

@@ -16,15 +16,14 @@
     
     
     String queryText = null;
+    String queryText2 = null;
     
     
-    //ResultSet rs;
     
             
             if(title1 != null){
             for(int i=0; i<title1.length; i++){
                 queryText = "DELETE FROM public2.booksborrow WHERE title = '" + title1[i] + "'";
-                
                 try {
 
                        Statement stat = con.createStatement();

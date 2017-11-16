@@ -15,6 +15,12 @@
     </head>
     <body>
         <%@ include file="navbar.jsp"%>
+        <div class="container-fluid margintop-60">
+          <div class="row">
+              <%@ include file="sidebar.jsp"%>
+            <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+        
+        
         
         <form method="post" action="http://localhost:8080/SPBTSystem/updatestud.jsp">
         <div class="container">
@@ -53,6 +59,12 @@
         </form>
 <!--        <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
-    <%@ include file="footer.jsp"%>
+
+
+
+            </main>
+          </div>
+        </div>
+<%@ include file="footer.jsp"%>
     </body>
 </html>

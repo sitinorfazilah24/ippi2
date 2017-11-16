@@ -15,6 +15,14 @@
     </head>
     <body>
         <%@ include file="navbar.jsp"%>
+        <div class="container-fluid margintop-60">
+          <div class="row">
+              <%@ include file="sidebar.jsp"%>
+            <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+        
+        
+        
+        
         
         <form method="post" action="http://localhost:8080/SPBTSystem/nexreturn-sub.jsp">
             
@@ -87,6 +95,11 @@
         
         </div>
         </form>
+        
+        
+            </main>
+          </div>
+        </div>
         
         
 

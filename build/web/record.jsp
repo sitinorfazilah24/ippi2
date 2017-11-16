@@ -21,6 +21,13 @@
 </head>
   <body>
       <%@ include file="navbar.jsp"%>
+      <div class="container-fluid margintop-60">
+          <div class="row">
+              <%@ include file="sidebar.jsp"%>
+            <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+      
+      
+      
 <%
 String id = request.getParameter("record");
 String driverName = "org.postgresql.Driver";
@@ -84,5 +91,11 @@ e.printStackTrace();
 </table>
 </div>
 </div>
+
+
+
+            </main>
+          </div>
+      </div>
 <%@ include file="footer.jsp"%>
 </body>

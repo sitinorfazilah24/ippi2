@@ -8,12 +8,19 @@
 <html>
     <head>
         <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
-        <title>JSP Page</title>
+        <title>SPBT-i</title>
         <!--<link rel]="stylesheet" href="assets/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
         <%@ include file="header.jsp"%>
     </head>
     <body>
         <%@ include file="navbar.jsp"%>
+         <div class="container-fluid margintop-60">
+          <div class="row">
+              <%@ include file="sidebar.jsp"%>
+            <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+        
+        
+        
         
         <form method="post" action="http://localhost:8080/SPBTSystem/nexborrow-b.jsp">
         <div class="container">
@@ -43,6 +50,9 @@
                 </table>
             </div>
        </div>
+            </main>
+          </div>
+         </div>
        
 
     <%@ include file="footer.jsp"%>
