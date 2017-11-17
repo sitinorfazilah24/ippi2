@@ -14,12 +14,13 @@
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon4">Form</span>
             <input type="text" name="form" class="form-control" id="test" value="asda" placeholder="test" aria-describedby="basic-addon3" required>
-            <p id="duplicate"></p>
         </div>
+            <span id="duplicate"></span>
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon3">Form</span>
             <input type="text" name="form" class="form-control" id="test1" value="asda2" placeholder="test" aria-describedby="basic-addon3" required>
         </div>
+            <button type="button" id="testdis">Click Me!</button>
         
         
     </body>
@@ -34,8 +35,6 @@
         ResultSet resultSet = null;
         Statement statement2 = null;
         ResultSet resultSet2 = null;
-        String bookid="qweqwe";
-//        String[] title=new String[z];
 int i=0;
         try{ 
         
@@ -81,13 +80,15 @@ try{
                 
                $('#test').on('change',function(){
                    var nowvalue=this.value;
-                   for(var i=0;i<array1.length;i++){
-                        if(nowvalue===array1[i]){
-                           $('#duplicate').html('hello');
+                    for(var i=0;i<array1.length;i++){
+                        if(nowvalue==array1[i]){
                            document.getElementById("duplicate").innerHTML = "This ID is already used";
-                           alert("hello");
-                       }
-                   }
+                           $('#testdis').attr('disabled',true);
+                           break;
+                        }else
+                            document.getElementById("duplicate").innerHTML = "";
+                            $('#testdis').attr('disabled',false);
+                    }
                });
             
         </script>      
