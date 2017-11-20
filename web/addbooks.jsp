@@ -3,7 +3,7 @@
     Created on : Oct 14, 2017, 4:42:45 AM
     Author     : mohdr
 --%>
-
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,8 +28,9 @@
         <h2 align="center"><font><strong>Add new books</strong></font></h2>
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon1">Book Identification</span>
-            <input onchange="checkid()" id="bookids" type="text" name="bookid" class="form-control" placeholder="test" aria-describedby="basic-addon2" required>
+            <input  id="bookids" type="text" name="bookid" class="form-control" placeholder="test" aria-describedby="basic-addon2" required>
         </div>
+        <span id="duplicate"></span>
         
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon2">Book Title</span>
@@ -52,7 +53,7 @@
         </div>
         
             <div class="group">
-                <input type="submit" class="button" value="Add">
+                <input id="adds" type="submit" class="button" value="Add">
             </div>
         
         </div>
@@ -63,32 +64,74 @@
           </div>
         </div>
         
+        <%
+    Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
+    Statement stat = null;
+    ResultSet rsts = null;
+        Statement statement2 = null;
+        ResultSet resultSet2 = null;
+int i=0;
+        try{ 
         
+        stat=connection.createStatement();
+        String sql ="SELECT bookid FROM public.books";
+
+        rsts = stat.executeQuery(sql);
+        while(rsts.next()){
+        i=rsts.getRow();
+        }
+
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
         
+ String[] title2=new String [i];
+try{ 
+        int x=0;
+        statement2=connection.createStatement();
+        String sql2 ="SELECT bookid FROM public.books";
+       
+
+        resultSet2 = statement2.executeQuery(sql2);
+        while(resultSet2.next()){
+           title2[x]=resultSet2.getString("bookid");
+           x++;
+        }
         
-       <script>
-    
-   function checkid(){
-  
-
-$("tagsaya").remove();
-
-
-  jQuery.ajax({
-       url:'http://localhost:8080/SPBTSystem/addbook-check.jsp',
-       async: true,
-         type:'GET',
-       data:{checkid:$('#checkid').val()},
-
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
          
-  
-  
-</script>
+         
+        %>
+        
+        <script>
+            var array1 = new Array();  
+            <%  
+            for (int z=0; z < title2.length; z++) {  
+            %>  
+            array1[<%=z%>] = "<%=title2[z]%>";   //Here is the latest update check it sravan .Put single quotes.
+            <%}%> 
+                
+               $('#bookids').on('change',function(){
+                   var nowvalue=this.value;
+                    for(var i=0;i<array1.length;i++){
+                        if(nowvalue==array1[i]){
+                           document.getElementById("duplicate").innerHTML = "This ID is already used";
+                           $('#adds').attr('disabled',true);
+                           break;
+                        }else
+                            document.getElementById("duplicate").innerHTML = "";
+                            $('#adds').attr('disabled',false);
+                    }
+               });
+        </script> 
         
         
         
-<!--        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
-    
+       
+        
+        
+ 
     </body>
 </html>

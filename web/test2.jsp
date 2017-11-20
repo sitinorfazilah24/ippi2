@@ -44,7 +44,7 @@ int i=0;
         resultSet = statement.executeQuery(sql);
         while(resultSet.next()){
         i=resultSet.getRow();
-        }
+        }out.print(i);
 
         } catch (Exception e) {
         e.printStackTrace();
@@ -89,6 +89,8 @@ try{
                             document.getElementById("duplicate").innerHTML = "";
                             $('#testdis').attr('disabled',false);
                     }
+                    $.ajax()
                });
+              
             
         </script>      
