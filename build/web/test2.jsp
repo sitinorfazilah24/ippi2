@@ -1,96 +1,54 @@
 <%-- 
-    Document   : test2
-    Created on : Nov 2, 2017, 7:47:38 AM
+    Document   : inputbooks3
+    Created on : Nov 20, 2017, 9:42:17 PM
     Author     : mohdr
 --%>
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page
+    import="java.io.*,java.lang.*,java.util.*,java.net.*,java.util.*,java.text.*"%>
+<%@ page import="javax.activation.*,javax.mail.*,org.apache.commons.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+
+
+<%!
+    public String sendMail(String to, String sub, String msg) {
+        String res = null;
+        System.out.println("HI");       
+        return res;
+    }%>
+
 <html>
-     <%@ include file="header.jsp"%>
-        <%@ include file="footer.jsp"%>
-        
-        <body>
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon4">Form</span>
-            <input type="text" name="form" class="form-control" id="test" value="asda" placeholder="test" aria-describedby="basic-addon3" required>
-        </div>
-            <span id="duplicate"></span>
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon3">Form</span>
-            <input type="text" name="form" class="form-control" id="test1" value="asda2" placeholder="test" aria-describedby="basic-addon3" required>
-        </div>
-            <button type="button" id="testdis">Click Me!</button>
-        
-        
-    </body>
-    
+<head>
+<title>Send Email using JSP</title>
+</head>
+<body>
+    <center>
+        <h1>Send Email using JSP</h1>
+    </center>
+    <form>  
+        <label>Email To</label><br />       
+            <input type="text" name="to" /><br /> 
+        <label>Subject</label><br />        
+            <input type="text" name="sub" /><br /> 
+        <label for="body">Message</label><br />
+            <input type="text" name="msg" /><br /> 
+        <input type="submit" onClick="sendMail( to, sub, msg )"/>
+    </form>
+</body>
 </html>
 
-
-
-<%
-    Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
-    Statement statement = null;
-        ResultSet resultSet = null;
-        Statement statement2 = null;
-        ResultSet resultSet2 = null;
-int i=0;
-        try{ 
-        
-        statement=connection.createStatement();
-        String sql ="SELECT bookid FROM public.books";
-
-        resultSet = statement.executeQuery(sql);
-        while(resultSet.next()){
-        i=resultSet.getRow();
-        }out.print(i);
-
-        } catch (Exception e) {
-        e.printStackTrace();
-        }
-        
- String[] title=new String [i];
-try{ 
-        int x=0;
-        statement2=connection.createStatement();
-        String sql2 ="SELECT bookid FROM public.books";
-       
-
-        resultSet2 = statement.executeQuery(sql2);
-        while(resultSet2.next()){
-           title[x]=resultSet2.getString("bookid");
-           x++;
-        }
-        
-        } catch (Exception e) {
-        e.printStackTrace();
-        }
-         
-         
-        %>
-        
-        <script>
-            var array1 = new Array();  
-            <%  
-            for (int z=0; z < title.length; z++) {  
-            %>  
-            array1[<%=z%>] = "<%=title[z]%>";   //Here is the latest update check it sravan .Put single quotes.
-            <%}%> 
-                
-               $('#test').on('change',function(){
-                   var nowvalue=this.value;
-                    for(var i=0;i<array1.length;i++){
-                        if(nowvalue==array1[i]){
-                           document.getElementById("duplicate").innerHTML = "This ID is already used";
-                           $('#testdis').attr('disabled',true);
-                           break;
-                        }else
-                            document.getElementById("duplicate").innerHTML = "";
-                            $('#testdis').attr('disabled',false);
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('#sendMailBtn').click(function (){
+                $.ajax({
+                    type: "post",
+                    url: "/path", 
+                    data: "email=" + $('#email').val() + "&subject="+$('#subject').val() + "&msg=" + $('#msg').val(),
+                    success: function(msg){      
+                        //
                     }
-                    $.ajax()
-               });
-              
-            
-        </script>      
+                });
+            });
+        });
+ </script>

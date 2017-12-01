@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SPBT-i</title>
         <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
         <%@ include file="header.jsp"%>
@@ -16,11 +16,10 @@
     </head>
     <body>
         <%@ include file="navbar.jsp"%>
-        
+        <div class="container-fluid margintop-60">
 <%
             Class.forName("org.postgresql.Driver");
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
-
 
             String up= request.getParameter("up");
             String queryText = null;
@@ -28,13 +27,11 @@
 //            session.setAttribute("up",up);
 //            response.setHeader("location","http://localhost:8080/SPBTSystem/addbooks-up-sub.jsp");
 
-            
-                queryText = "SELECT * FROM public.books WHERE bookid = '" + up + "'";
+                queryText = "SELECT DISTINCT bookid, forms, title, publisher, price, status FROM public.books WHERE title = '" + up + "'";
                 
                 try {
                        Statement stat = con.createStatement();
                        ResultSet rst = stat.executeQuery(queryText);
-                       
                        while(rst.next()){
                        %>
                        
@@ -82,9 +79,10 @@
                        con.close();
                    } catch (Exception e) {e.printStackTrace(); }
         
-          
+//          out.print("ghello");
 //        response.sendRedirect("addbooks.jsp");
         %>
+        </div>
         
         
         

@@ -30,16 +30,22 @@
             <span class="input-group-addon" id="basic-addon1">Book Identification</span>
             <input  id="bookids" type="text" name="bookid" class="form-control" placeholder="test" aria-describedby="basic-addon2" required>
         </div>
-        <span id="duplicate"></span>
+        
         
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon2">Book Title</span>
-            <input type="text" name="title" class="form-control" placeholder="test" aria-describedby="basic-addon1" required>
+            <input type="text" id="titles" name="title" class="form-control" placeholder="test" aria-describedby="basic-addon1" required>
         </div>
+        <span id="duplicate"></span>
         
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon4">Form</span>
-            <input type="number" name="form" class="form-control" placeholder="test" aria-describedby="basic-addon3" required>
+            <input type="number" name="form" class="form-control" placeholder="test" aria-describedby="basic-addon4" required>
+        </div>
+        
+        <div class="input-group form-group">
+            <span class="input-group-addon" id="basic-addon3">Total Books</span>
+            <input type="number" name="total" class="form-control" placeholder="test" aria-describedby="basic-addon3" required>
         </div>
             
         <div class="input-group form-group">
@@ -74,7 +80,7 @@ int i=0;
         try{ 
         
         stat=connection.createStatement();
-        String sql ="SELECT bookid FROM public.books";
+        String sql ="SELECT DISTINCT title FROM public.books";
 
         rsts = stat.executeQuery(sql);
         while(rsts.next()){
@@ -89,12 +95,12 @@ int i=0;
 try{ 
         int x=0;
         statement2=connection.createStatement();
-        String sql2 ="SELECT bookid FROM public.books";
+        String sql2 ="SELECT DISTINCT title FROM public.books";
        
 
         resultSet2 = statement2.executeQuery(sql2);
         while(resultSet2.next()){
-           title2[x]=resultSet2.getString("bookid");
+           title2[x]=resultSet2.getString("title");
            x++;
         }
         
@@ -113,7 +119,7 @@ try{
             array1[<%=z%>] = "<%=title2[z]%>";   //Here is the latest update check it sravan .Put single quotes.
             <%}%> 
                 
-               $('#bookids').on('change',function(){
+               $('#titles').on('change',function(){
                    var nowvalue=this.value;
                     for(var i=0;i<array1.length;i++){
                         if(nowvalue==array1[i]){

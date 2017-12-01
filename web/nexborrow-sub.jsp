@@ -40,6 +40,7 @@
         <td><%=resultSet1.getString("studid") %></td>
         <td><%=form2 %></td>
         <td><%=resultSet1.getString("title") %></td>
+        <td><%=resultSet1.getString("borrow_status") %></td>
 
         </tr>
         <% 

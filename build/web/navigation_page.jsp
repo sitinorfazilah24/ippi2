@@ -36,7 +36,7 @@
             <div class="container-fluid row">
                 <div class="col">
                   <div class="thumbnail text-center">
-                    <a href="borrow.jsp">
+                    <a href="l-borrow.jsp">
                     <img  src="assets/img/student1.png" alt="books loan image" style="width:180px;height:180px;">
                     </a>
                     <div class="caption">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col">
                   <div class="thumbnail text-center">
-                    <a href="nexborrow.jsp">
+                    <a href="l-borrow.jsp">
                         <img src="assets/img/borrowing.png" alt="report image" style="width:270px;height:180px;">
                     </a>
                     <div class="caption">
@@ -68,7 +68,7 @@
             <div class="row container-fluid">
                 <div class="col">
                   <div class="thumbnail text-center">
-                    <a href="nexreturn.jsp">
+                    <a href="l-return.jsp">
                         <img  src="assets/img/Things-Book.png" alt="report image" style="width:180px;height:180px;">
                     </a>
                     <div class="caption">

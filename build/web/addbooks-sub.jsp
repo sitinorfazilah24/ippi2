@@ -17,8 +17,10 @@
     Class.forName("org.postgresql.Driver");
     Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
     
-    String bookid= request.getParameter("bookid");
+    //String bookid= request.getParameter("bookid");
+    String bookid= "ID";
     String title= request.getParameter("title");
+    int total= Integer.parseInt(request.getParameter("total"));
     String form= request.getParameter("form");
     String publisher= request.getParameter("publisher");
     String price= request.getParameter("price");
@@ -29,17 +31,16 @@
     String queryText = null;
 
             
-                queryText = "insert into public.books values ('" + bookid + "','" + form + "','" + title + "','" + publisher + "','" + price + "','Active')";
-                
+                queryText = "insert into public.books (bookid,forms,title,publisher,price,status) values ('" + bookid + "','" + form + "','" + title + "','" + publisher + "','" + price + "','Active')";
+                for(int i=0;i<total;i++){
                 try {
-
+                       
                        Statement stat = con.createStatement();
                        ResultSet rst = stat.executeQuery(queryText);
-                       rst.close();
-                       stat.close();
-                       con.close();
+
+                       
                    } catch (Exception e) {e.printStackTrace(); }
-                
+                }
           
         response.sendRedirect("addbooks.jsp");
 %>

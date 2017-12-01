@@ -22,3 +22,7 @@ and open the template in the editor.
     margin: 4px 2px;
     cursor: pointer;
 }
+
+.thead-dark{
+    background-color:#2F4F4F;
+}
