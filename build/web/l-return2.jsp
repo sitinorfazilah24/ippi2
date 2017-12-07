@@ -24,6 +24,7 @@
         session.setAttribute("studid",studid);
         response.setHeader("location","http://localhost:8080/SPBTSystem/l-return3.jsp");
 
+if(studid!=null){
 %>
 
 <html>
@@ -99,7 +100,6 @@
                 <td><%=resultSet1.getString("title") %></td>
                 <td><%=resultSet1.getString("borrow_status") %></td>
                 <td><%=resultSet1.getString("borrow_date") %></td>
-
                 </tr>
                 <%  
                     }
@@ -128,6 +128,10 @@
  
     </body>
 </html>
+<%
+}
+%>
+
 <script>
     $(document).ready(function(){
         $('#nametab').ready(function(){

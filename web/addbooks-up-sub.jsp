@@ -25,7 +25,7 @@
             String queryText = null;
 
             
-                queryText = "UPDATE public.books SET bookid='" + bookid + "', title='" + title + "', forms ='" + form + "', publisher='" + publisher + "', price='" + price + "' WHERE title='" + up + "'";
+                queryText = "UPDATE public.books SET title='" + title + "', forms ='" + form + "', publisher='" + publisher + "', price='" + price + "', dateadd=current_date WHERE title='" + up + "'  ";
                 
                 try {
                        Statement stat = con.createStatement();

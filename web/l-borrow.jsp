@@ -46,13 +46,10 @@
             </div>
             <span id="check"></span>
         
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon3">RFID Book Card</span>
-            <input type="text" name="rfid" id="form2" class="form-control" placeholder="Book ID" aria-describedby="basic-addon3" value="<%=request.getParameter("rfid")%>" required>
-            <div class="group">
-                <input id="adds2" type="submit" class="button" value="SCAN">
-            </div>
-        </div>
+            <%--<%@ include file="borrowrfid.jsp"%>--%>
+            
+            
+       
         
             <div class="group">
                 <input id="adds" type="submit" class="button" value="NEXT">
@@ -60,7 +57,7 @@
         </div>
         </form>
                 
-               <%@ include file="l-borrow2.jsp"%>
+               <%@ include file="l-borrowsub.jsp"%>
                <%@ include file="l-borrow3.jsp"%>
         
             </main>
@@ -98,7 +95,6 @@ int i=0;
         } catch (Exception e) {
         e.printStackTrace();
         }
-        out.print(i+"asbdyavsdja");
         
  String[] title2=new String [i];
 try{ 
@@ -121,27 +117,36 @@ try{
         %>
         
         <script>
-            var array1 = new Array();  
-            <%  
+//            var array1 = new Array();  
+//            <%  
             for (int j=0; j < title2.length; j++) {  
-            %>  
-            array1[<%=j%>] = "<%=title2[j]%>";   //Here is the latest update check it sravan .Put single quotes.
-            <%}%> 
-                
-               $('#studid').on('change',function(){
-                   var nowvalue=this.value;
-                   var test=true;
-                    for(var i=0;i<array1.length;i++){
-                        if(nowvalue==array1[i]){
-                           document.getElementById("check").innerHTML = "";
-                           $('#adds').attr('disabled',false);
-                           test=false;
-                           break;
-                        }
-                    }
-                    if(test==true){
-                        document.getElementById("check").innerHTML = "This ID is not registered";
-                        $('#adds').attr('disabled',true);
-                    }
-               });
+//            %>//  
+//            array1[<%=j%>] = "<%=title2[j]%>";   //Here is the latest update check it sravan .Put single quotes.
+//            <%}%> 
+//                
+//               $('#studid').on('change',function(){
+//                   var nowvalue=this.value;
+//                   var test=true;
+//                    for(var i=0;i<array1.length;i++){
+//                        if(nowvalue==array1[i]){
+//                           document.getElementById("check").innerHTML = "";
+//                           $('#adds').attr('disabled',false);
+//                           test=false;
+//                           break;
+//                        }
+//                    }
+//                    if(test==true){
+//                        document.getElementById("check").innerHTML = "This ID is not registered";
+//                        $('#adds').attr('disabled',true);
+//                    }
+//               });
         </script> 
+        
+        <script>
+                $(document).ready(function(){
+                    $("#adds2").click(function(){
+                       window.location.href = 'borrowrfid.jsp';
+                    });
+                });
+        </script>
+       

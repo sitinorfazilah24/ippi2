@@ -46,11 +46,11 @@
                 </div>
                 <div class="col text-center">
                   <div class="thumbnail">
-                    <a href="books.jsp">
+                    <a href="newcard.jsp">
                         <img  src="assets/img/books.png" alt="books image" style="width:180px;height:180px;">
                     </a>
                     <div class="caption">
-                        <h3 class="text-center">Book</h3>
+                        <h3 class="text-center">Add Book ID</h3>
                     </div>
                   </div>
                 </div>
@@ -65,7 +65,7 @@
                   </div>
                 </div>
             </div>
-            <div class="row container-fluid">
+            <div class=" container-fluid row">
                 <div class="col">
                   <div class="thumbnail text-center">
                     <a href="l-return.jsp">

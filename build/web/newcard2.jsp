@@ -13,7 +13,6 @@
             <table class="table">
 
                     <tr>
-                        <th><b>Books identification</b></th>
                         <th><b>Form</b></th>
                         <th><b>Books Title</b></th>
                         <th><b>Publisher</b></th>
@@ -48,7 +47,7 @@
         try{
         
         statement=con2.createStatement();
-        String sql ="SELECT DISTINCT bookid, forms, title, publisher, price, status FROM public.books WHERE status='Active'";
+        String sql ="SELECT DISTINCT forms, title, publisher, price, status FROM public.books WHERE status='Active'";
 
         resultSet = statement.executeQuery(sql);
         int i=0,x=0;
@@ -83,7 +82,6 @@
                     <tr>
                     
             
-                    <td name="bookid"><%=resultSet.getString("bookid")%></td>
                     <td><%=resultSet.getString("forms") %></td>
                     <td><%=resultSet.getString("title") %></td>
                     <td><%=resultSet.getString("publisher")%></td>

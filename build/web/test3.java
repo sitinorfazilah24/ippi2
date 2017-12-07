@@ -6,6 +6,8 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +21,27 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/test3"})
 public class test3 extends HttpServlet {
 
+    
+    public void ScannerTest() throws ServletException, IOException {
+
+//    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            while (true) {
+                System.out.println("Please input a line");
+                long then = System.currentTimeMillis();
+                String line = scanner.nextLine();
+                long now = System.currentTimeMillis();
+                System.out.printf("Waited %.3fs for user input%n", (now - then) / 1000d);
+                System.out.printf("User input was: %s%n", line);
+            }
+        } catch(NoSuchElementException e) {
+            // System.in has been closed
+            System.out.println("System.in was closed; exiting");
+        }
+//    }
+}
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -28,6 +51,10 @@ public class test3 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

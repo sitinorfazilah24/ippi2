@@ -31,7 +31,7 @@
     String queryText = null;
 
             
-                queryText = "insert into public.books (bookid,forms,title,publisher,price,status) values ('" + bookid + "','" + form + "','" + title + "','" + publisher + "','" + price + "','Active')";
+                queryText = "insert into public.books (forms,title,publisher,price,status, dateadd) values ('" + form + "','" + title + "','" + publisher + "','" + price + "','Active',current_date)";
                 for(int i=0;i<total;i++){
                 try {
                        

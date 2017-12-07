@@ -27,7 +27,7 @@
 //            session.setAttribute("up",up);
 //            response.setHeader("location","http://localhost:8080/SPBTSystem/addbooks-up-sub.jsp");
 
-                queryText = "SELECT DISTINCT bookid, forms, title, publisher, price, status FROM public.books WHERE title = '" + up + "'";
+                queryText = "SELECT DISTINCT forms, title, publisher, price, status FROM public.books WHERE title = '" + up + "'";
                 
                 try {
                        Statement stat = con.createStatement();
@@ -38,10 +38,6 @@
                        <form method="post" action="http://localhost:8080/SPBTSystem/addbooks-up-sub.jsp?up=<%=up%>">
         <div class="container form-group margintop-60">
         <h2 align="center"><font><strong>Add new books</strong></font></h2>
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon2">Book Identification</span>
-            <input type="text" name="bookid" class="form-control" placeholder="test" aria-describedby="basic-addon2" value="<%=rst.getString("bookid") %>" required>
-        </div>
         
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon1">Book Title</span>

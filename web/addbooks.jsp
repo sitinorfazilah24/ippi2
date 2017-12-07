@@ -26,36 +26,52 @@
         <form method="post" action="http://localhost:8080/SPBTSystem/addbooks-sub.jsp">
         <div class="container form-group">
         <h2 align="center"><font><strong>Add new books</strong></font></h2>
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon1">Book Identification</span>
-            <input  id="bookids" type="text" name="bookid" class="form-control" placeholder="test" aria-describedby="basic-addon2" required>
-        </div>
         
         
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon2">Book Title</span>
-            <input type="text" id="titles" name="title" class="form-control" placeholder="test" aria-describedby="basic-addon1" required>
+            <input type="text" id="titles" name="title" pattern="[A-Za-z]{5,}" title="must be more than 5 character" class="form-control" placeholder="EG. Sehijau Warna Daun" aria-describedby="basic-addon1" required>
         </div>
         <span id="duplicate"></span>
         
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon4">Form</span>
-            <input type="number" name="form" class="form-control" placeholder="test" aria-describedby="basic-addon4" required>
-        </div>
+        <div class="row">
+            <div class="col-lg-4">
         
         <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon3">Total Books</span>
-            <input type="number" name="total" class="form-control" placeholder="test" aria-describedby="basic-addon3" required>
+            <span class="input-group-addon" id="basic-addon4">Form</span>
+            <select type="number" name="form" class="form-control" title="please pick your form" aria-describedby="basic-addon4" required>
+                <option value="" selected disable>choose</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
         </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="input-group form-group">
+                <span class="input-group-addon" id="basic-addon3">Total Books</span>
+                    <input type="number" name="total" class="form-control" title="please insert total books" placeholder="eg. 100" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="input-group form-group">
+                    <span class="input-group-addon" id="basic-addon6">Price per book</span>
+                    <span class="input-group-addon">RM</span>
+                        <input type="number" name="price" id="price" min="0.00" max="1000.00" step="0.01" class="form-control" placeholder="eg. 15.00" aria-describedby="basic-addon3" required>
+                </div>
+            </div>
+            
+        </div>
+        
+        
             
         <div class="input-group form-group">
             <span class="input-group-addon" id="basic-addon5">Publisher</span>
-            <input type="text" name="publisher" class="form-control" placeholder="test" aria-describedby="basic-addon3" required>
-        </div>
-            
-        <div class="input-group form-group">
-            <span class="input-group-addon" id="basic-addon6">Price</span>
-            <input type="text" name="price" class="form-control" placeholder="test" aria-describedby="basic-addon3" required>
+            <input type="text" name="publisher" pattern="[A-Za-z]{5,}" title="must include character" class="form-control" placeholder="eg. Matahari" aria-describedby="basic-addon3" required>
         </div>
         
             <div class="group">

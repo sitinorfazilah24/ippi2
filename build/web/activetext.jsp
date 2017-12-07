@@ -13,7 +13,10 @@
 <!DOCTYPE html>
 <%
  //File creation
+ String bookid3= request.getParameter("id");
  String strPath = "C://Users/mohdr/Desktop/test.txt";
+ String strPath2 = "C://Users/mohdr/Desktop/test2.txt";
+ try{
  File strFile = new File(strPath);
  boolean fileCreated = strFile.createNewFile();
  //File appending
@@ -21,7 +24,20 @@
  objWriter.write("1");
  objWriter.flush();
  objWriter.close();
+ } catch (Exception e) {e.printStackTrace(); }
+ 
+ 
+try{
+ File strFile = new File(strPath2);
+ boolean fileCreated = strFile.createNewFile();
+ //File appending
+ Writer objWriter = new BufferedWriter(new FileWriter(strFile));
+ objWriter.write(bookid3);
+ objWriter.flush();
+ objWriter.close();
+ } catch (Exception e) {e.printStackTrace(); }
 %>  
         <script type="text/javascript">
-            window.alert("SYSTEM READY TO SCAN!!!")
+            window.alert("card scanning done!!!");
         </script>
+        
