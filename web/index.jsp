@@ -177,7 +177,7 @@ h1{font-family:Georgia, serif;
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Log In</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Register</label>
         <div class="login-form">
-             <form method="post" action="http://localhost:8081/SPBTSystem/authentication.jsp">
+             <form method="post" action="http://localhost:8080/SPBTSystem/authentication.jsp">
             <div class="sign-in-htm">
                 <div class="group">
                     <label for="user" class="label">Username</label>
@@ -202,7 +202,7 @@ h1{font-family:Georgia, serif;
             </div>
              
             <div class="sign-up-htm">
-                <form method="post" action="http://localhost:8081/SPBTSystem/registration.jsp">
+                <form method="post" action="http://localhost:8080/SPBTSystem/registration.jsp">
                 <div class="group">
                     <label for="user" class="label">Username</label>
                     <input id="user" name="user" type="text" class="input">

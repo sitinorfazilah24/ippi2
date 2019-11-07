@@ -19,7 +19,7 @@
     String spbtid = request.getParameter("spbtid");
     String email = request.getParameter("email");
     Class.forName("org.postgresql.Driver");
-    Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-1","postgres","P@ssw0rd");
+    Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/spbt-I","postgres","12345");
     
     //ResultSet rs;
     PreparedStatement ps = con.prepareStatement("select * from registeredid where spbtid_temp=? and id_status='Active';");
@@ -34,7 +34,7 @@
                     }
                     else{    
                     Statement st = con.createStatement();
-    int i = st.executeUpdate("insert into userobject values ('" + spbtid + "','" + user + "','" + pwd + "','" + fname + "','" + email + "','Active', current_date)");
+    int i = st.executeUpdate("insert into userobject values ('" + user + "','" + pwd + "','" + fname + "','" + spbtid + "','" + email + "','Active', current_date)");
     if (i > 0) {
         //session.setAttribute("userid", user);
         response.sendRedirect("welcome.jsp");

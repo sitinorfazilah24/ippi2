@@ -3,15 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/nbproject/genfiles.properties</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/navigation_page.jsp</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/authentication.jsp</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/borrow.jsp</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/books.jsp</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/header.jsp</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/navbar.jsp</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/footer.jsp</file>
-            <file>file:/C:/Users/Ridhuan/Desktop/ippi/SPBTSystem/web/record.jsp</file>
+            <file>file:/C:/IPPI/ippi2/web/inputbooksz.jsp</file>
+            <file>file:/C:/IPPI/ippi2/web/navigation_page.jsp</file>
+            <file>file:/C:/IPPI/ippi2/web/inputreturnz.jsp</file>
+            <file>file:/C:/IPPI/ippi2/web/addbooks.jsp</file>
+            <file>file:/C:/IPPI/ippi2/web/schedule.jsp</file>
+            <file>file:/C:/IPPI/ippi2/web/sidebar.jsp</file>
+            <file>file:/C:/IPPI/ippi2/web/test1.jsp</file>
         </group>
     </open-files>
 </project-private>
